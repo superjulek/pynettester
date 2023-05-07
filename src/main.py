@@ -1,25 +1,39 @@
 
 import argparse
 
-from dtls_server import run_server as run_dtls_server, run_benchmark as run_dtls_benchmark
-from udp_server import run_server as run_udp_server, run_benchmark as run_udp_benchmark
+from dtls_server import DTLSServer
+from udp_server import UDPServer
+from reply_server import reply_server
+from benchmark_server import benchmark_server
+import cfg
 
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-ds', '--dtls_server', action='store_true', help='run DTLS server')
-    parser.add_argument('-us', '--udp_server', action='store_true', help='run UDP server')
-    parser.add_argument('-ub', '--udp_benchmark', action='store_true', help='run UDP benchmark')
-    parser.add_argument('-db', '--dtls_benchmark', action='store_true', help='run DTLS benchmark')
+
+    parser.add_argument('-d', '--dtls', action='store_true', help='use DTLS')
+    parser.add_argument('-u', '--udp', action='store_true', help='use UDP')
+
+    parser.add_argument('-r', '--reply', action='store_true', help='run reply server')
+    parser.add_argument('-b', '--benchmark', action='store_true', help='run benchmark server')
+
     args = parser.parse_args()
-    if args.dtls_server:
-        run_dtls_server()
-    elif args.udp_server:
-        run_udp_server()
-    elif args.udp_benchmark:
-        run_udp_benchmark()
-    elif args.dtls_benchmark:
-        run_dtls_benchmark()
+
+    if args.dtls:
+        s = DTLSServer(cfg.ADDRESS, cfg.PORT)
+    elif args.udp:
+        s = UDPServer(cfg.ADDRESS, cfg.PORT)
+    else:
+        raise Exception('No Server option selected')
+
+    if args.reply:
+        f = reply_server
+    elif args.benchmark:
+        f = benchmark_server
+    else:
+        raise Exception('No server selected')
+    f(s)
+
 
 if __name__ == '__main__':
     main()

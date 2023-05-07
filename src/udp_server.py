@@ -1,48 +1,30 @@
 import socket
-import random
-import time
+
+from server import Server
+import cfg as cfg
 
 
-def run_server():
-    print('Server starting')
+class UDPServer(Server):
+    def __init__(self, address: str, port: int) -> None:
+        self.socket = socket.socket(socket.AF_INET6, socket.SOCK_DGRAM)
+        self.socket.bind((address, port))
+        self.socket.settimeout(cfg.TIMEOUT)
+        self.remote_address = None
 
-    sck = socket.socket(socket.AF_INET6, socket.SOCK_DGRAM)
-    sck.bind(("fc::01", 11111))
-    sck.settimeout(120)
+    def wait_for_connection(self):
+        message, address = self.socket.recvfrom(1500)
+        print(f'Received {len(message)} bytes ({message.decode()}) from {address}')
+        self.remote_address = address
 
-    cnt = 0
-    while True:
-        cnt += 1
-        try:
-            message, address = sck.recvfrom(1500)
-            print(f"Received {len(message)} bytes")
-            sck.sendto(message, address)
-        except Exception as e:
-            print(e)
+    def receive(self) -> bytes:
+        message, address = self.socket.recvfrom(1500)
+        self.remote_address = address
+        return message
 
-    sck.close()
+    def send(self, m: bytes):
+        assert self.remote_address is not None, 'Address unknown'
+        self.socket.sendto(m, self.remote_address)
 
-
-def run_benchmark():
-    print('Server starting')
-
-    sck = socket.socket(socket.AF_INET6, socket.SOCK_DGRAM)
-    sck.bind(("fc::01", 11111))
-    sck.settimeout(120)
-    message, address = sck.recvfrom(1500)
-    print(f'Received {message.decode()}, starting test')
-    time.sleep(1)
-
-    for i in range(1, 1400):
-        m = bytes([random.randint(0, 255) for _ in range(i)])
-        try:
-            b = time.monotonic_ns()
-            sck.sendto(m, address)
-            response, _ = sck.recvfrom(1500)
-            e = time.monotonic_ns()
-            assert response == m, 'Received other data'
-            print(f'{i} bytes in {(e - b) / 1000.} us')
-        except Exception as e:
-            print(e)
-
-    sck.close()
+    def close_connection(self):
+        self.socket.close()
+        self.remote_address = None

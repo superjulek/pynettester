@@ -1,0 +1,389 @@
+
+> 
+> 
+> ike_controo l -l fc::01 25
+Round 0
+Stats
+2627161 us total established in 
+      1 us reset context
+1294242 us init context
+    501 us build INIT
+    452 us send INIT
+  17507 us receive INIT
+1295302 us parse INIT
+    990 us build AUTH
+    178 us send AUTH
+  15680 us receive AUTH
+   1328 us parse AUTH
+1294172 us generate_key
+1294787 us get_secret
+Round 1
+Stats
+2627028 us total established in 
+      1 us reset context
+1294243 us init context
+    501 us build INIT
+    181 us send INIT
+  16985 us receive INIT
+1295300 us parse INIT
+    989 us build AUTH
+    179 us send AUTH
+  16341 us receive AUTH
+   1329 us parse AUTH
+1294174 us generate_key
+1294784 us get_secret
+Round 2
+Stats
+2635305 us total established in 
+      1 us reset context
+1295532 us init context
+    501 us build INIT
+    180 us send INIT
+  24198 us receive INIT
+1295302 us parse INIT
+    990 us build AUTH
+    179 us send AUTH
+  16116 us receive AUTH
+   1327 us parse AUTH
+1295463 us generate_key
+1294788 us get_secret
+Round 3
+Stats
+2626713 us total established in 
+      1 us reset context
+1294242 us init context
+    501 us build INIT
+    181 us send INIT
+  16672 us receive INIT
+1295397 us parse INIT
+    990 us build AUTH
+    179 us send AUTH
+  16245 us receive AUTH
+   1326 us parse AUTH
+1294172 us generate_key
+1294881 us get_secret
+Round 4
+Stats
+2627988 us total established in 
+      1 us reset context
+1294976 us init context
+    501 us build INIT
+    180 us send INIT
+  16761 us receive INIT
+1295300 us parse INIT
+    990 us build AUTH
+    178 us send AUTH
+  16794 us receive AUTH
+   1328 us parse AUTH
+1294907 us generate_key
+1294785 us get_secret
+Round 5
+Stats
+2630598 us total established in 
+      1 us reset context
+1294338 us init context
+    501 us build INIT
+    181 us send INIT
+  18163 us receive INIT
+1295301 us parse INIT
+    990 us build AUTH
+    179 us send AUTH
+  18638 us receive AUTH
+   1327 us parse AUTH
+1294268 us generate_key
+1294787 us get_secret
+Round 6
+ike_control [-i addrs]
+     -i - initialize IKE SA to addrs
+ike_control [-t]
+     -t - terminate established IKE SA
+ike_control [-l addrs num]
+     -l - establish and terminate IKE SA in loop num times to addrs
+> ike_control -l fc::01 2
+Round 0
+Stats
+2626884 us total established in 
+      1 us reset context
+1294338 us init context
+    501 us build INIT
+    278 us send INIT
+  16799 us receive INIT
+1295301 us parse INIT
+    990 us build AUTH
+    179 us send AUTH
+  16191 us receive AUTH
+   1327 us parse AUTH
+1294269 us generate_key
+1294787 us get_secret
+Round 1
+Stats
+2626909 us total established in 
+      1 us reset context
+1294242 us init context
+    501 us build INIT
+    181 us send INIT
+  16948 us receive INIT
+1295301 us parse INIT
+    990 us build AUTH
+    178 us send AUTH
+  16262 us receive AUTH
+   1326 us parse AUTH
+1294173 us generate_key
+1294786 us get_secret
+> ike_control -i f   l fc::01 17
+Round 0
+Stats
+2640917 us total established in 
+      1 us reset context
+1294242 us init context
+    501 us build INIT
+    445 us send INIT
+  16738 us receive INIT
+1295300 us parse INIT
+    989 us build AUTH
+    178 us send AUTH
+  30218 us receive AUTH
+   1326 us parse AUTH
+1294173 us generate_key
+1294785 us get_secret
+Round 1
+Stats
+2627850 us total established in 
+      1 us reset context
+1294244 us init context
+    501 us build INIT
+    181 us send INIT
+  17860 us receive INIT
+1295299 us parse INIT
+    990 us build AUTH
+    179 us send AUTH
+  16290 us receive AUTH
+   1325 us parse AUTH
+1294174 us generate_key
+1294784 us get_secret
+Round 2
+Stats
+2628815 us total established in 
+      1 us reset context
+1295074 us init context
+    501 us build INIT
+    180 us send INIT
+  18259 us receive INIT
+1295301 us parse INIT
+    990 us build AUTH
+    179 us send AUTH
+  16023 us receive AUTH
+   1329 us parse AUTH
+1295005 us generate_key
+1294787 us get_secret
+Round 3
+Stats
+2626932 us total established in 
+      1 us reset context
+1294242 us init context
+    594 us build INIT
+    180 us send INIT
+  16659 us receive INIT
+1295302 us parse INIT
+    990 us build AUTH
+    178 us send AUTH
+  16477 us receive AUTH
+   1329 us parse AUTH
+1294173 us generate_key
+1294788 us get_secret
+Round 4
+Stats
+2634534 us total established in 
+      1 us reset context
+1294243 us init context
+    502 us build INIT
+    180 us send INIT
+  17351 us receive INIT
+1295300 us parse INIT
+    990 us build AUTH
+    179 us send AUTH
+  23482 us receive AUTH
+   1328 us parse AUTH
+1294174 us generate_key
+1294785 us get_secret
+Round 5
+Stats
+2636306 us total established in 
+      1 us reset context
+1294245 us init context
+    501 us build INIT
+    180 us send INIT
+  24409 us receive INIT
+1295757 us parse INIT
+    990 us build AUTH
+    178 us send AUTH
+  17736 us receive AUTH
+   1330 us parse AUTH
+1294175 us generate_key
+1295242 us get_secret
+Round 6
+Stats
+2633232 us total established in 
+      0 us reset context
+1294243 us init context
+    501 us build INIT
+    181 us send INIT
+  16857 us receive INIT
+1295303 us parse INIT
+    990 us build AUTH
+    179 us send AUTH
+  22671 us receive AUTH
+   1328 us parse AUTH
+1294173 us generate_key
+1294788 us get_secret
+Round 7
+Stats
+2629046 us total established in 
+      1 us reset context
+1294338 us init context
+    501 us build INIT
+    181 us send INIT
+  16892 us receive INIT
+1297119 us parse INIT
+    990 us build AUTH
+    179 us send AUTH
+  16537 us receive AUTH
+   1328 us parse AUTH
+1294268 us generate_key
+1296605 us get_secret
+Round 8
+Stats
+2627106 us total established in 
+      1 us reset context
+1294244 us init context
+    501 us build INIT
+    181 us send INIT
+  16707 us receive INIT
+1295590 us parse INIT
+    990 us build AUTH
+    351 us send AUTH
+  16231 us receive AUTH
+   1331 us parse AUTH
+1294175 us generate_key
+1295076 us get_secret
+Round 9
+Stats
+2627351 us total established in 
+      1 us reset context
+1294242 us init context
+    502 us build INIT
+    180 us send INIT
+  16943 us receive INIT
+1295558 us parse INIT
+    989 us build AUTH
+    179 us send AUTH
+  16450 us receive AUTH
+   1328 us parse AUTH
+1294172 us generate_key
+1295044 us get_secret
+Round 10
+Stats
+2627633 us total established in 
+      1 us reset context
+1294338 us init context
+    501 us build INIT
+    180 us send INIT
+  16075 us receive INIT
+1296728 us parse INIT
+    990 us build AUTH
+    179 us send AUTH
+  16334 us receive AUTH
+   1327 us parse AUTH
+1294269 us generate_key
+1296212 us get_secret
+Round 11
+Stats
+2627498 us total established in 
+      1 us reset context
+1294244 us init context
+    502 us build INIT
+    180 us send INIT
+  16852 us receive INIT
+1295301 us parse INIT
+    990 us build AUTH
+    179 us send AUTH
+  16849 us receive AUTH
+   1421 us parse AUTH
+1294174 us generate_key
+1294787 us get_secret
+Round 12
+Stats
+2626787 us total established in 
+      1 us reset context
+1294242 us init context
+    501 us build INIT
+    181 us send INIT
+  16650 us receive INIT
+1295301 us parse INIT
+    990 us build AUTH
+    179 us send AUTH
+  16435 us receive AUTH
+   1327 us parse AUTH
+1294172 us generate_key
+1294787 us get_secret
+Round 13
+Stats
+2629076 us total established in 
+      1 us reset context
+1294243 us init context
+    501 us build INIT
+    181 us send INIT
+  16880 us receive INIT
+1295299 us parse INIT
+    989 us build AUTH
+    179 us send AUTH
+  18495 us receive AUTH
+   1329 us parse AUTH
+1294174 us generate_key
+1294784 us get_secret
+Round 14
+Stats
+2629499 us total established in 
+      1 us reset context
+1294438 us init context
+    501 us build INIT
+    181 us send INIT
+  18227 us receive INIT
+1295394 us parse INIT
+    990 us build AUTH
+    179 us send AUTH
+  17280 us receive AUTH
+   1329 us parse AUTH
+1294369 us generate_key
+1294880 us get_secret
+Round 15
+Stats
+2627760 us total established in 
+      0 us reset context
+1294242 us init context
+    501 us build INIT
+    181 us send INIT
+  17741 us receive INIT
+1295299 us parse INIT
+    991 us build AUTH
+    178 us send AUTH
+  16321 us receive AUTH
+   1326 us parse AUTH
+1294172 us generate_key
+1294785 us get_secret
+Round 16
+Stats
+2626711 us total established in 
+      1 us reset context
+1294336 us init context
+    501 us build INIT
+    180 us send INIT
+  16814 us receive INIT
+1295300 us parse INIT
+    990 us build AUTH
+    178 us send AUTH
+  16105 us receive AUTH
+   1326 us parse AUTH
+1294267 us generate_key
+1294785 us get_secret
+> 

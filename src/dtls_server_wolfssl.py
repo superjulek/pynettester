@@ -20,7 +20,7 @@ class DTLSServer(Server):
             certfile=path.join(cert_path, "cert.pem"),
             server_side=True,
             ca_certs=path.join(cert_path, "cert.pem"),
-            ciphers='DHE-RSA-AES128-SHA',
+            ciphers='AES128-SHA',
             do_handshake_on_connect=True  # TODO: verify
             )
 

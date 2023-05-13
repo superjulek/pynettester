@@ -1,3 +1,6 @@
 python3-dtls
 argparse
 pip-tools
+scapy
+matplotlib
+numpy

@@ -1,10 +1,14 @@
 import socket
 from os import path
+import logging
 
-from dtls.sslconnection import SSLConnection
+from dtls.sslconnection import SSLConnection, PROTOCOL_DTLSv1_2
 
 from server import Server
 import cfg as cfg
+
+
+logging.getLogger().setLevel(logging.NOTSET)
 
 
 class DTLSServer(Server):
@@ -16,6 +20,7 @@ class DTLSServer(Server):
 
         self.connection = SSLConnection(
             self.socket,
+            ssl_version=PROTOCOL_DTLSv1_2,
             keyfile=path.join(cert_path, "key.pem"),
             certfile=path.join(cert_path, "cert.pem"),
             server_side=True,

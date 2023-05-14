@@ -14,7 +14,7 @@ class TooManyPackets(Exception):
 
 IFACES=['tap0', 'enp0s31f6']
 IFACES = ['enp0s31f6']
-LOOP_NUM = 100
+LOOP_NUM = 25
 
 
 def benchmark_server(server: Server):

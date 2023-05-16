@@ -4,7 +4,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-FILE = 'results/benchmark_server_UDPServer_enp0s31f6_2023_05_13_17_46.csv'
+FILE_UDP = 'results/benchmark_server_UDPServer_enp0s31f6_2023_05_14_17_22.csv'
+FILE_ESP = 'results/benchmark_server_UDPServer_enp0s31f6_2023_05_13_17_46.csv'
+FILE_DTLS = 'results/benchmark_server_DTLSServer_enp0s31f6_2023_05_14_12_59.csv'
 
 
 def get_buckets(x: list, y: list, n: int):
@@ -31,45 +33,61 @@ def get_buckets(x: list, y: list, n: int):
     return bucket_width, bucket_averages, bucket_stddevs
 
 
-def draw_processing_graph(data: list):
-    x = [r[0] for r in data]
-    y = [r[1] for r in data]
-    n = 20
+def draw_processing_multi_graph(datas: dict):
+    for name, data in datas.items():
+        x = [r[0] for r in data]
+        y = [r[1] for r in data]
+        n = 40
 
-    bucket_width, bucket_averages, bucket_stddevs = get_buckets(x, y, n)
+        bucket_width, bucket_averages, bucket_stddevs = get_buckets(x, y, n)
 
-    # Plot the data and bucket averages
-    #plt.plot(x, y, 'o')
-    plt.errorbar((np.arange(n)+0.5)*bucket_width, bucket_averages, yerr=bucket_stddevs, fmt='o')
-    plt.xlim([0, max(x)])
-    plt.xlabel('X value')
-    plt.ylabel('Y value')
+        # Plot the data and bucket averages
+        #plt.plot(x, y, 'o')
+        plt.errorbar((np.arange(n)+0.5)*bucket_width, bucket_averages, yerr=bucket_stddevs, fmt='.', label=name)
+    plt.xlim([0, 1400])
+    plt.ylim(0, 10)
+    plt.xlabel('Payload size (bytes)')
+    plt.ylabel('Processing time, bidirectional (ms)')
+    plt.grid()
+    plt.legend()
     plt.show()
+
+
+
+
 
 
 def draw_neg_pie_chart(data: dict):
 
     # Creating the main pie chart
+    def format(d):
+        return f'{round(d * sum(data.values())/100000., 3)} ms'
     fig, ax = plt.subplots(figsize=(8, 8))
-    ax.pie(data.values(), labels=data.keys(), startangle=90,
-        wedgeprops={'edgecolor': 'white', 'linewidth': 1.5})
+    patches, texts, _ = ax.pie(data.values(), labels=None, startangle=90,
+        wedgeprops={'edgecolor': 'white', 'linewidth': 1}, autopct=format)
 
 
     # Adding title and labels
-    ax.set_title('Compound Pie Chart')
-    ax.legend(loc='best')
+    ax.set_title('IKE Negotiation time')
+    ax.legend(patches, data.keys(), loc='best')
 
     # Displaying the plot
     plt.show()
 
 
-
-if __name__ == '__main__':
+def read_file_data(filename: str):
     data = []
-    with open(FILE, 'r') as csv_file:
+    with open(filename, 'r') as csv_file:
         reader = csv.reader(csv_file)
         for idx, row in enumerate(reader):
-            data.append([float(row[0]), float(row[1])])
-            if idx > 1300 * 25:
-                break
-    draw_processing_graph(data)
+            data.append([float(row[0]), 1000*float(row[1])])
+    return data
+
+
+if __name__ == '__main__':
+    datas = {
+        'DTLS': read_file_data(FILE_DTLS),
+        'UDP': read_file_data(FILE_UDP),
+        'ESP': read_file_data(FILE_ESP),
+    }
+    draw_processing_multi_graph(datas)

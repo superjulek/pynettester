@@ -42,8 +42,8 @@ def plot_neg(text: str):
         'other': sum(y for x, y in v.items() if x not in ['get_secret', 'generate_key'])
     }
     normalv = {
-        'receive AUTH': v['generate_key'],
-        'receive INIT': v['get_secret'],
+        'receive AUTH': v['receive AUTH'],
+        'receive INIT': v['receive INIT'],
         'other': sum(y for x, y in v.items() if x not in ['receive AUTH', 'receive INIT'] + list(bigv.keys()))
     }
     print(normalv)

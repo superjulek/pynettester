@@ -8,6 +8,10 @@ FILE_UDP = 'results/benchmark_server_UDPServer_enp0s31f6_2023_05_14_17_22.csv'
 FILE_ESP = 'results/benchmark_server_UDPServer_enp0s31f6_2023_05_13_17_46.csv'
 FILE_DTLS = 'results/benchmark_server_DTLSServer_enp0s31f6_2023_05_14_12_59.csv'
 
+FILE_UDP = 'results/benchmark_server_UDPServer_wlp4s0_2023_05_20_23_23.csv'
+FILE_ESP = 'results/benchmark_server_UDPServer_wlp4s0_2023_05_20_22_10.csv'
+FILE_DTLS = 'results/benchmark_server_DTLSServerWolfSSL_wlp4s0_2023_05_21_00_27.csv'
+
 
 def get_buckets(x: list, y: list, n: int):
     maxx = max(x)
@@ -45,7 +49,7 @@ def draw_processing_multi_graph(datas: dict):
         #plt.plot(x, y, 'o')
         plt.errorbar((np.arange(n)+0.5)*bucket_width, bucket_averages, yerr=bucket_stddevs, fmt='.', label=name)
     plt.xlim([0, 1400])
-    plt.ylim(0, 10)
+    plt.ylim(0, 50)
     plt.xlabel('Payload size (bytes)')
     plt.ylabel('Processing time, bidirectional (ms)')
     plt.grid()

@@ -12,14 +12,16 @@ from results_utils import save_results, ResList
 class TooManyPackets(Exception):
     ...
 
-IFACES=['tap0', 'enp0s31f6']
+IFACES=['tap0', 'enp0s31f6', 'wlp4s0']
 IFACES = ['enp0s31f6']
-LOOP_NUM = 25
+IFACES = ['wlp4s0']
+LOOP_NUM = 10
 
 
 def benchmark_server(server: Server):
     results = ResList()
     server.wait_for_connection()
+    print('xd')
     for _ in range(LOOP_NUM):
         for i in range(1, cfg.BUFFER_SIZE - 1):
             m = bytes([random.randint(0, 255) for _ in range(i)])

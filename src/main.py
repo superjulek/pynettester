@@ -6,6 +6,7 @@ from dtls_server_wolfssl import DTLSServerWolfSSL
 from udp_server import UDPServer
 from reply_server import reply_server
 from benchmark_server import benchmark_server
+from loop_server import loop_server
 import cfg
 
 
@@ -18,6 +19,7 @@ def main():
 
     parser.add_argument('-r', '--reply', action='store_true', help='run reply server')
     parser.add_argument('-b', '--benchmark', action='store_true', help='run benchmark server')
+    parser.add_argument('-l', '--loop', action='store_true', help='run loop server')
 
     args = parser.parse_args()
 
@@ -34,6 +36,8 @@ def main():
         f = reply_server
     elif args.benchmark:
         f = benchmark_server
+    elif args.loop:
+        f = loop_server
     else:
         raise Exception('No server selected')
     f(s)

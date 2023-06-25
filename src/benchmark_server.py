@@ -21,7 +21,6 @@ LOOP_NUM = 10
 def benchmark_server(server: Server):
     results = ResList()
     server.wait_for_connection()
-    print('xd')
     for _ in range(LOOP_NUM):
         for i in range(1, cfg.BUFFER_SIZE - 1):
             m = bytes([random.randint(0, 255) for _ in range(i)])

@@ -3,7 +3,7 @@ import numpy as np
 from graphs import draw_neg_pie_chart
 
 
-FILE = 'results/neg_1.csv'
+FILE = 'results/neg_esp.txt'
 
 def parse_ike_neg_text(text: str):
     headers = [

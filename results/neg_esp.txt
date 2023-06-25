@@ -1,0 +1,479 @@
+
+
+Welcome to minicom 2.8
+
+OPTIONS: I18n
+Port /dev/ttyUSB0, 20:36:24
+
+Press CTRL-A Z for help on special keys
+
+
+> ifconfig 10 add fc::02/120
+success: added fc::02/120 to interface 10
+> ping fc::01
+12 bytes from fc::1: icmp_seq=0 ttl=64 time=15.605 ms
+12 bytes from fc::1: icmp_seq=1 ttl=64 time=6.659 ms
+12 bytes from fc::1: icmp_seq=2 ttl=64 time=8.100 ms
+
+--- fc::01 PING statistics ---
+3 packets transmitted, 3 packets received, 0% packet loss
+round-trip min/avg/max = 6.659/10.121/15.605 ms
+> ike_control -l fc::01 25
+Round 0
+Stats
+19965614 us total established in
+     15 us reset context
+9944882 us init context
+   1698 us build INIT
+   3273 us send INIT
+  17224 us receive INIT
+9941893 us parse INIT
+   3489 us build AUTH
+   3388 us send AUTH
+  40238 us receive AUTH
+   6855 us parse AUTH
+9944577 us generate_key
+9940391 us get_secret
+Round 1
+Stats
+19949735 us total established in
+     11 us reset context
+9941922 us init context
+   1698 us build INIT
+   3480 us send INIT
+  24491 us receive INIT
+9954196 us parse INIT
+   3494 us build AUTH
+   3382 us send AUTH
+   7559 us receive AUTH
+   6840 us parse AUTH
+9941647 us generate_key
+9952681 us get_secret
+Round 2
+Stats
+19935832 us total established in
+     10 us reset context
+9949014 us init context
+   1698 us build INIT
+   3265 us send INIT
+  15741 us receive INIT
+9942154 us parse INIT
+   3490 us build AUTH
+   3400 us send AUTH
+   7087 us receive AUTH
+   7309 us parse AUTH
+9948730 us generate_key
+9940651 us get_secret
+Round 3
+Stats
+19933179 us total established in
+     11 us reset context
+9940135 us init context
+   1699 us build INIT
+   3467 us send INIT
+  13201 us receive INIT
+9948631 us parse INIT
+   3495 us build AUTH
+   3362 us send AUTH
+   9669 us receive AUTH
+   6842 us parse AUTH
+9939860 us generate_key
+9947127 us get_secret
+Round 4
+Stats
+19946228 us total established in
+     11 us reset context
+9943951 us init context
+   1699 us build INIT
+   3298 us send INIT
+  19707 us receive INIT
+9953721 us parse INIT
+   3496 us build AUTH
+   3388 us send AUTH
+   7448 us receive AUTH
+   6839 us parse AUTH
+9943672 us generate_key
+9952204 us get_secret
+Round 5
+Stats
+19928690 us total established in
+     11 us reset context
+9938037 us init context
+   1699 us build INIT
+   3453 us send INIT
+  13492 us receive INIT
+9948606 us parse INIT
+   3497 us build AUTH
+   3366 us send AUTH
+   7012 us receive AUTH
+   6844 us parse AUTH
+9937753 us generate_key
+9947101 us get_secret
+Round 6
+Stats
+19945160 us total established in
+     10 us reset context
+9939294 us init context
+   1699 us build INIT
+   3343 us send INIT
+  28875 us receive INIT
+9947934 us parse INIT
+   3497 us build AUTH
+   3371 us send AUTH
+   7617 us receive AUTH
+   6845 us parse AUTH
+9939010 us generate_key
+9946427 us get_secret
+Round 7
+Stats
+19941200 us total established in
+     11 us reset context
+9950038 us init context
+   1699 us build INIT
+   3696 us send INIT
+  13283 us receive INIT
+9948543 us parse INIT
+   3499 us build AUTH
+   3369 us send AUTH
+   7538 us receive AUTH
+   6846 us parse AUTH
+9949763 us generate_key
+9947027 us get_secret
+Round 8
+Stats
+19925670 us total established in
+     11 us reset context
+9942158 us init context
+   1700 us build INIT
+   3305 us send INIT
+  12566 us receive INIT
+9941594 us parse INIT
+   3495 us build AUTH
+   3377 us send AUTH
+   7936 us receive AUTH
+   6847 us parse AUTH
+9941883 us generate_key
+9940086 us get_secret
+Round 9
+Stats
+19944991 us total established in
+     10 us reset context
+9945107 us init context
+   1699 us build INIT
+   3395 us send INIT
+  13076 us receive INIT
+9957934 us parse INIT
+   3500 us build AUTH
+   3338 us send AUTH
+   7400 us receive AUTH
+   6848 us parse AUTH
+9944830 us generate_key
+9956421 us get_secret
+Round 10
+Stats
+19924936 us total established in
+     10 us reset context
+9941330 us init context
+   1700 us build INIT
+   3288 us send INIT
+  13605 us receive INIT
+9941168 us parse INIT
+   3492 us build AUTH
+   3374 us send AUTH
+   7433 us receive AUTH
+   6849 us parse AUTH
+9941055 us generate_key
+9939657 us get_secret
+Round 11
+Stats
+19930086 us total established in
+     10 us reset context
+9940256 us init context
+   1701 us build INIT
+   3492 us send INIT
+  13653 us receive INIT
+9947332 us parse INIT
+   3502 us build AUTH
+   3351 us send AUTH
+   7249 us receive AUTH
+   6850 us parse AUTH
+9939981 us generate_key
+9945791 us get_secret
+Round 12
+Stats
+19939738 us total established in
+     10 us reset context
+9950606 us init context
+   1701 us build INIT
+   3294 us send INIT
+  13130 us receive INIT
+9946889 us parse INIT
+   3503 us build AUTH
+   3368 us send AUTH
+   7693 us receive AUTH
+   6851 us parse AUTH
+9950330 us generate_key
+9945361 us get_secret
+Round 13
+Stats
+19931150 us total established in
+     10 us reset context
+9939581 us init context
+   1701 us build INIT
+   3489 us send INIT
+  13136 us receive INIT
+9948776 us parse INIT
+   3503 us build AUTH
+   3700 us send AUTH
+   7698 us receive AUTH
+   6861 us parse AUTH
+9939306 us generate_key
+9947263 us get_secret
+Round 14
+ike_control [-i addrs]
+     -i - initialize IKE SA to addrs
+ike_control [-t]
+     -t - terminate established IKE SA
+ike_control [-l addrs num]
+     -l - establish and terminate IKE SA in loop num times to addrs
+>
+shell: command not found:
+>
+> ike_control -l fc::01 12
+Round 0
+ike_control [-i addrs]
+     -i - initialize IKE SA to addrs
+ike_control [-t]
+     -t - terminate established IKE SA
+ike_control [-l addrs num]
+     -l - establish and terminate IKE SA in loop num times to addrs
+> reboot
+WiFi disconnected from ssid TestNet, reason 8 (ASSOC_LEAVE)
+EXCEPTION!! exccause=9 (LoadStoreAlignmentCause) @4010396a excvaddr=000000ff
+processes:
+        pid | name                 | state    Q | pri | stack  ( used) ( free) | base addr  | current
+          - | isr_stack            | -        - |   - |   2048 (  368) ( 1680) | 0x3ffe8000 | 0x3ffe8800
+          1 | ppT                  | bl mutex _ |   2 |   3640 ( 1344) ( 2296) | 0x3fffa230 | 0x3fffaed0
+          2 | pmT                  | bl mutex _ |   4 |   1080 (  392) (  688) | 0x3fffb0ac | 0x3fffb370
+          3 | rtT                  | bl mutex _ |   3 |   2104 ( 1064) ( 1040) | 0x3fffb4ec | 0x3fffbbb0
+          4 | esp_events           | bl mutex _ |   5 |   2104 (  900) ( 1204) | 0x3fffc358 | 0x3fffc9f0
+          5 | idle                 | pending  Q |  31 |   1024 (  240) (  784) | 0x3ffedc2c | 0x3ffedf50
+          6 | main                 | bl mutex _ |  15 |  10240 ( 7056) ( 3184) | 0x3ffee02c | 0x3fff05e0
+          7 | ipv6_esp             | bl rx    _ |  13 |   4096 (  604) ( 3492) | 0x3fff3838 | 0x3fff45f0
+          8 | ipv6                 | running  Q |  12 |   4096 ( 1324) ( 2772) | 0x3fff2838 | 0x3fff3670
+          9 | udp                  | bl rx    _ |  14 |   3072 (  500) ( 2572) | 0x3fff6830 | 0x3fff72c0
+         10 | netif-esp-wifi       | bl anyfl _ |  10 |   1536 (  868) (  668) | 0x3fff0ed0 | 0x3fff13a0
+            | SUM                  |            |     |  35040 (14660) (20380)
+
+heap: 32916 (used 21524, free 11392) [bytes]
+
+register set
+pc      : 401039a0      ps      : 00000031      exccause: 00000009      excvaddr: 000000ff
+epc1    : 401039a0      epc2    : 00000000      epc3    : 40243c59
+a0      : 4010396a      a1      : 3fff36c0      a2      : 000000ff      a3      : 000000ff
+a4      : 00000001      a5      : 00000000      a6      : 00000000      a7      : 3fff380c
+a8      : 5e92ed38      a9      : 000061ef      a10     : 5e92ed38      a11     : 4a7f5fb0
+a12     : 3fff4cfc      a13     : 3fff83d0      a14     : 00000000      a15     : 00000021
+
+ ets Jan  8 2013,rst cause:4, boot mode:(3,6)
+
+wdt reset
+load 0x40100000, len 6492, room 16
+tail 12
+chksum 0xa3
+ho 0 tail 12 room 4
+load 0x3ffe8408, len 24, room 12
+tail 12
+chksum 0x1a
+ho 0 tail 12 room 4
+load 0x3ffe8420, len 2792, room 12
+tail 12
+chksum 0x41
+csum 0x41�
+
+free(ptr=NULL)
+caller file wpa_auth_ie.c line 332
+main(): This is RIOT! (Version: 2022.07-devel-2725-g75aa5-minimal_ike)
+RIOT wolfSSL DTLS testing implementation
+All up, running the shell now
+> ifconfig WiFi connected to ssid TestNet, channel 1
+10 fc::02/120
+usage: ifconfig <if_id> [-]{6lo|ack_req|autoack|autocca|csma|encrypt|mac_no_sleep|fwd|iphc|preload|promisc|phy_busy|raw|rtr_adv|iq_invert|rx_single|chan_hop|checksum|otaa|link_check}
+> ifconfig 10 add fc::02/120
+success: added fc::02/120 to interface 10
+> ping fc::01
+12 bytes from fc::1: icmp_seq=0 ttl=64 time=15.440 ms
+12 bytes from fc::1: icmp_seq=1 ttl=64 time=5.627 ms
+12 bytes from fc::1: icmp_seq=2 ttl=64 time=5.436 ms
+
+--- fc::01 PING statistics ---
+3 packets transmitted, 3 packets received, 0% packet loss
+round-trip min/avg/max = 5.436/8.834/15.440 ms
+> ike_control -i fc::01 12
+Stats
+19934082 us total established in
+     15 us reset context
+9939524 us init context
+   1697 us build INIT
+   3477 us send INIT
+  12976 us receive INIT
+9951351 us parse INIT
+   3493 us build AUTH
+   3388 us send AUTH
+   8202 us receive AUTH
+   7301 us parse AUTH
+9939239 us generate_key
+9949849 us get_secret
+> ike_control -t
+> ell: command not found:
+> ike_control -l fc::01 10
+Round 0
+Stats
+19929757 us total established in
+     15 us reset context
+9944028 us init context
+   1696 us build INIT
+   3302 us send INIT
+  12491 us receive INIT
+9942806 us parse INIT
+   3489 us build AUTH
+   3398 us send AUTH
+   9033 us receive AUTH
+   6838 us parse AUTH
+9943721 us generate_key
+9941304 us get_secret
+Round 1
+Stats
+19930678 us total established in
+     11 us reset context
+9939237 us init context
+   1697 us build INIT
+   4435 us send INIT
+  13055 us receive INIT
+9948118 us parse INIT
+   3494 us build AUTH
+   3369 us send AUTH
+   7759 us receive AUTH
+   6839 us parse AUTH
+9938961 us generate_key
+9946609 us get_secret
+Round 2
+Stats
+19928113 us total established in
+     11 us reset context
+9939972 us init context
+   1697 us build INIT
+   3399 us send INIT
+  13897 us receive INIT
+9946196 us parse INIT
+   3495 us build AUTH
+   3337 us send AUTH
+   6602 us receive AUTH
+   6841 us parse AUTH
+9939700 us generate_key
+9944674 us get_secret
+Round 3
+Stats
+19942727 us total established in
+     11 us reset context
+9951137 us init context
+   1697 us build INIT
+   3443 us send INIT
+  14260 us receive INIT
+9947528 us parse INIT
+   3496 us build AUTH
+   3357 us send AUTH
+   7851 us receive AUTH
+   7278 us parse AUTH
+9950853 us generate_key
+9946005 us get_secret
+Round 4
+Stats
+19925053 us total established in
+     11 us reset context
+9938387 us init context
+   1697 us build INIT
+   3399 us send INIT
+  16588 us receive INIT
+9941304 us parse INIT
+   3488 us build AUTH
+   3353 us send AUTH
+   7311 us receive AUTH
+   6843 us parse AUTH
+9938115 us generate_key
+9939780 us get_secret
+Round 5
+Stats
+19934120 us total established in
+     11 us reset context
+9938683 us init context
+   1697 us build INIT
+   3475 us send INIT
+  13659 us receive INIT
+9952731 us parse INIT
+   3497 us build AUTH
+   3341 us send AUTH
+   7508 us receive AUTH
+   6844 us parse AUTH
+9938407 us generate_key
+9951211 us get_secret
+Round 6
+Stats
+19935400 us total established in
+     11 us reset context
+9949720 us init context
+   1696 us build INIT
+   3270 us send INIT
+  13704 us receive INIT
+9942777 us parse INIT
+   3493 us build AUTH
+   3392 us send AUTH
+   7815 us receive AUTH
+   6845 us parse AUTH
+9949444 us generate_key
+9941269 us get_secret
+Round 7
+Stats
+19931446 us total established in
+     11 us reset context
+9939772 us init context
+   1697 us build INIT
+   3482 us send INIT
+  14143 us receive INIT
+9948226 us parse INIT
+   3499 us build AUTH
+   5226 us send AUTH
+   5821 us receive AUTH
+   6889 us parse AUTH
+9939496 us generate_key
+9946717 us get_secret
+Round 8
+Stats
+19939197 us total established in
+     10 us reset context
+9938066 us init context
+   1697 us build INIT
+   3370 us send INIT
+  21445 us receive INIT
+9946636 us parse INIT
+   3500 us build AUTH
+   3333 us send AUTH
+  11571 us receive AUTH
+   6886 us parse AUTH
+9937794 us generate_key
+9945126 us get_secret
+Round 9
+Stats
+19945156 us total established in
+     10 us reset context
+9950043 us init context
+   1697 us build INIT
+   3432 us send INIT
+  13560 us receive INIT
+9949535 us parse INIT
+   3501 us build AUTH
+   3341 us send AUTH
+  10464 us receive AUTH
+   6887 us parse AUTH
+9949767 us generate_key
+9948025 us get_secret

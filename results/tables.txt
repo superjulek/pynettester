@@ -1,0 +1,80 @@
+DTLS STM:
+
+\begin{tabular}{lrr}
+\hline
+ Step                                              &   Duration [ms] &   Deviation [ms] \\
+\hline
+ Client Hello 1                                    &       0         &        0         \\
+ Hello Verify Request                              &       0.119557  &        0.0466829 \\
+ Client Hello 2                                    &       0.793268  &        0.0171467 \\
+ Server Hello, Certificate                         &       4.22561   &        0.718349  \\
+ Server Key Exchange, Server Hello Done            &       0.0321964 &        0.0130023 \\
+ Client Key Exchange                               &    2191.92      &        3.7447    \\
+ Change Cipher Spec, Encrypted Handshake Message 1 &       3.03268   &        0.261066  \\
+ Change Cipher Spec, Encrypted Handshake Message 2 &       0.219196  &        0.203592  \\
+ total                                             &    2201.93      &        3.66493   \\
+\hline
+\end{tabular}
+
+
+DTLS ESP:
+
+\begin{tabular}{lrr}
+\hline
+ Step                                              &   Duration [ms] &   Deviation [ms] \\
+\hline
+ Client Hello 1                                    &       0         &        0         \\
+ Hello Verify Request                              &       0.0976141 &        0.0155829 \\
+ Client Hello 2                                    &      16.0549    &       14.1595    \\
+ Server Hello, Certificate                         &       4.0167    &        0.315617  \\
+ Server Key Exchange, Server Hello Done            &       0.0590728 &        0.0301107 \\
+ Client Key Exchange                               &   14626.1       &       11.4311    \\
+ Change Cipher Spec, Encrypted Handshake Message 1 &      13.4314    &        6.56667   \\
+ Change Cipher Spec, Encrypted Handshake Message 2 &       0.188782  &        0.168701  \\
+ total                                             &   14685.3       &       28.7717    \\
+\hline
+\end{tabular}
+
+IPSEC STM:
+
+\begin{tabular}{lrr}
+\hline
+ Step              &   Duration [ms] &   Deviation [ms] \\
+\hline
+ total established &      2629.43    &      3.6446      \\
+ reset context     &         0.00092 &      0.000271293 \\
+ init context      &      1294.38    &      0.314777    \\
+ build INIT        &         0.50484 &      0.0182026   \\
+ send INIT         &         0.20588 &      0.0740488   \\
+ receive INIT      &        17.6779  &      2.02871     \\
+ parse INIT        &      1295.48    &      0.444155    \\
+ build AUTH        &         0.98988 &      0.000430813 \\
+ send AUTH         &         0.18556 &      0.0337735   \\
+ receive AUTH      &        17.688   &      3.1765      \\
+ parse AUTH        &         1.3314  &      0.0183434   \\
+ generate\_key      &      1294.31    &      0.31495     \\
+ get\_secret        &      1294.96    &      0.444097    \\
+\hline
+\end{tabular}
+
+IPSEC ESP:
+
+\begin{tabular}{lrr}
+\hline
+ Step              &   Duration [ms] &   Deviation [ms] \\
+\hline
+ total established &     19936.7     &       9.22851    \\
+ reset context     &         0.01112 &       0.00150519 \\
+ init context      &      9943       &       4.44978    \\
+ build INIT        &         1.69824 &       0.00150413 \\
+ send INIT         &         3.44088 &       0.225968   \\
+ receive INIT      &        15.3983  &       4.0069     \\
+ parse INIT        &      9947.46    &       4.31553    \\
+ build AUTH        &         3.49588 &       0.00426446 \\
+ send AUTH         &         3.45476 &       0.367883   \\
+ receive AUTH      &         9.18056 &       6.44608    \\
+ parse AUTH        &         6.90468 &       0.145284   \\
+ generate\_key      &      9942.72    &       4.44835    \\
+ get\_secret        &      9945.95    &       4.31421    \\
+\hline
+\end{tabular}

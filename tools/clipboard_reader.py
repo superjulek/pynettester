@@ -2,8 +2,11 @@ import numpy as np
 
 from graphs import draw_neg_pie_chart
 
+from tabulate import tabulate
+
 
 FILE = 'results/neg_esp.txt'
+FILE = 'results/neg_stm.txt'
 
 def parse_ike_neg_text(text: str):
     headers = [
@@ -29,6 +32,7 @@ def parse_ike_neg_text(text: str):
 
 def plot_neg(text: str):
     v = parse_ike_neg_text(text)
+    org_v = v
     v = {key: np.average([float(x) for x in value]) for key, value in v.items()}
     print(v)
     t = v['generate_key']
@@ -48,6 +52,14 @@ def plot_neg(text: str):
     }
     print(normalv)
     smallv = {x: y for x, y in v.items() if x not in list(bigv.keys()) + list(normalv.keys())}
+
+    tab = [['Step', 'Duration [ms]', 'Deviation [ms]']]
+    for k, vals in org_v.items():
+        fvals = [float(x) for x in vals]
+        tab.append([k, np.average(fvals) / 1000, np.std(fvals) / 1000])
+    latex_table = tabulate(tab, headers="firstrow", tablefmt="latex")
+    print(latex_table)
+
     draw_neg_pie_chart(bigv)
     draw_neg_pie_chart(normalv)
     draw_neg_pie_chart(smallv)

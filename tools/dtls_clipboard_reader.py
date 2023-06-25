@@ -38,7 +38,7 @@ def plot_neg(text: str):
     print(v)
     tab = [['Step', 'Duration [ms]', 'Deviation [ms]']]
     for k, (avg, std) in v.items():
-        tab.append([k, 1000 * avg, 100 * std])
+        tab.append([k, 1000 * avg, 1000 * std])
     latex_table = tabulate(tab, headers="firstrow", tablefmt="latex")
     print(latex_table)
     return

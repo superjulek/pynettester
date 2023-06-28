@@ -7,9 +7,21 @@ from tabulate import tabulate
 
 FILE = 'results/dtls_neg_esp.txt'
 FILE = 'results/dtls_neg_stm.txt'
+FILE = 'results/dtls_neg_stm_def.txt'
+FILE = 'results/dtls_neg_esp_def.txt'
 
 def parse_dtls_neg_text(text: str):
-    headers = [
+    headers_rsa = [
+        'Client Hello 1',
+        'Hello Verify Request',
+        'Client Hello 2',
+        'Server Hello, Certificate, Server Hello Done',
+        'Client Key Exchange',
+        'Change Cipher Spec, Finished 1',
+        'Change Cipher Spec, Finished 2',
+        'total'
+    ]
+    headers_dhe = [
         'Client Hello 1',
         'Hello Verify Request',
         'Client Hello 2',
@@ -20,6 +32,7 @@ def parse_dtls_neg_text(text: str):
         'Change Cipher Spec, Encrypted Handshake Message 2',
         'total'
     ]
+    headers = headers_rsa
     values = {}
     for h in headers:
         values[h] = [float(l.replace(h, '').strip()) for l in text.splitlines() if h in l]

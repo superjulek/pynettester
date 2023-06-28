@@ -78,3 +78,35 @@ IPSEC ESP:
  get\_secret        &      9945.95    &       4.31421    \\
 \hline
 \end{tabular}
+
+DTLS STM RSA:
+\begin{tabular}{lrr}
+\hline
+ Step                                         &   Duration [ms] &   Deviation [ms] \\
+\hline
+ Client Hello 1                               &        0        &        0         \\
+ Hello Verify Request                         &        0.135736 &        0.0964301 \\
+ Client Hello 2                               &        0.74091  &        0.0444629 \\
+ Server Hello, Certificate, Server Hello Done &        0.130901 &        0.0171368 \\
+ Client Key Exchange                          &       54.7594   &        0.229807  \\
+ Change Cipher Spec, Finished 1               &        2.51845  &        0.232929  \\
+ Change Cipher Spec, Finished 2               &        0.872669 &        0.307146  \\
+ total                                        &       61.0222   &        0.392355  \\
+\hline
+\end{tabular}
+
+DTLS ESP RSA:
+\begin{tabular}{lrr}
+\hline
+ Step                                         &   Duration [ms] &   Deviation [ms] \\
+\hline
+ Client Hello 1                               &        0        &        0         \\
+ Hello Verify Request                         &        0.098629 &        0.0251484 \\
+ Client Hello 2                               &       10.498    &        2.65544   \\
+ Server Hello, Certificate, Server Hello Done &        0.1653   &        0.0224263 \\
+ Client Key Exchange                          &      399.355    &        6.84736   \\
+ Change Cipher Spec, Finished 1               &       13.3287   &        2.41502   \\
+ Change Cipher Spec, Finished 2               &        0.142918 &        0.0186143 \\
+ total                                        &      440.661    &        9.48922   \\
+\hline
+\end{tabular}

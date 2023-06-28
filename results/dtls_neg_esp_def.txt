@@ -1,0 +1,358 @@
+> dtlsl fc::01 5
+DTLS: Connecting to server
+ 451206 total
+wolfSSL: Setting peer address and port
+Sending 1 byte
+Success.
+DTLS: Connecting to server
+ 438912 total
+wolfSSL: Setting peer address and port
+Sending 1 byte
+Success.
+DTLS: Connecting to server
+ 431991 total
+wolfSSL: Setting peer address and port
+Sending 1 byte
+Success.
+DTLS: Connecting to server
+ 428106 total
+wolfSSL: Setting peer address and port
+Sending 1 byte
+Success.
+DTLS: Connecting to server
+ 441325 total
+wolfSSL: Setting peer address and port
+Sending 1 byte
+Success.
+DTLS: Connecting to server
+ 451042 total
+wolfSSL: Setting peer address and port
+Sending 1 byte
+Success.
+DTLS: Connecting to server
+ 436167 total
+wolfSSL: Setting peer address and port
+Sending 1 byte
+Success.
+DTLS: Connecting to server
+ 444341 total
+wolfSSL: Setting peer address and port
+Sending 1 byte
+Success.
+DTLS: Connecting to server
+ 429491 total
+wolfSSL: Setting peer address and port
+Sending 1 byte
+Success.
+> dtlsl fc::01 5
+DTLS: Connecting to server
+ 450016 total
+wolfSSL: Setting peer address and port
+Sending 1 byte
+Success.
+DTLS: Connecting to server
+ 457618 total
+wolfSSL: Setting peer address and port
+Sending 1 byte
+Success.
+DTLS: Connecting to server
+ 432836 total
+wolfSSL: Setting peer address and port
+Sending 1 byte
+Success.
+DTLS: Connecting to server
+ 432465 total
+wolfSSL: Setting peer address and port
+Sending 1 byte
+Success.
+DTLS: Connecting to server
+ 441795 total
+wolfSSL: Setting peer address and port
+Sending 1 byte
+Success.
+DTLS: Connecting to server
+ 440403 total
+wolfSSL: Setting peer address and port
+Sending 1 byte
+Success.
+DTLS: Connecting to server
+ 433520 total
+wolfSSL: Setting peer address and port
+Sending 1 byte
+Success.
+DTLS: Connecting to server
+ 432915 total
+wolfSSL: Setting peer address and port
+Sending 1 byte
+Success.
+DTLS: Connecting to server
+ 432796 total
+wolfSSL: Setting peer address and port
+Sending 1 byte
+Success.
+DTLS: Connecting to server
+ 451172 total
+wolfSSL: Setting peer address and port
+Sending 1 byte
+Success.
+DTLS: Connecting to server
+ 440986 total
+wolfSSL: Setting peer address and port
+Sending 1 byte
+Success.
+DTLS: Connecting to server
+ 433235 total
+wolfSSL: Setting peer address and port
+Sending 1 byte
+Success.
+DTLS: Connecting to server
+ 440421 total
+wolfSSL: Setting peer address and port
+Sending 1 byte
+Success.
+DTLS: Connecting to server
+ 428685 total
+wolfSSL: Setting peer address and port
+Sending 1 byte
+Success.
+DTLS: Connecting to server
+ 463885 total
+wolfSSL: Setting peer address and port
+Sending 1 byte
+Success.
+DTLS: Connecting to server
+ 451203 total
+wolfSSL: Setting peer address and port
+Sending 1 byte
+Success.
+
+
+
+
+
+
+Connected
+Client Hello 1 0.0
+Hello Verify Request 8.153915405273438e-05
+Client Hello 2 0.009407997131347656
+Server Hello, Certificate, Server Hello Done 0.009613275527954102
+Client Key Exchange 0.4121105670928955
+Change Cipher Spec, Finished 1 0.4240403175354004
+Change Cipher Spec, Finished 2 0.42421436309814453
+Received 1 bytes, responding same
+Connected
+Client Hello 1 0.0
+Hello Verify Request 8.96453857421875e-05
+Client Hello 2 0.014495849609375
+Server Hello, Certificate, Server Hello Done 0.014653921127319336
+Client Key Exchange 0.4100780487060547
+Change Cipher Spec, Finished 1 0.42376136779785156
+Change Cipher Spec, Finished 2 0.4238910675048828
+Received 1 bytes, responding same
+Connected
+Client Hello 1 0.0
+Hello Verify Request 7.748603820800781e-05
+Client Hello 2 0.008594512939453125
+Server Hello, Certificate, Server Hello Done 0.008753299713134766
+Client Key Exchange 0.40515947341918945
+Change Cipher Spec, Finished 1 0.41680097579956055
+Change Cipher Spec, Finished 2 0.41693854331970215
+Received 1 bytes, responding same
+Connected
+Client Hello 1 0.0
+Hello Verify Request 8.368492126464844e-05
+Client Hello 2 0.008840560913085938
+Server Hello, Certificate, Server Hello Done 0.009007930755615234
+Client Key Exchange 0.4013187885284424
+Change Cipher Spec, Finished 1 0.41352415084838867
+Change Cipher Spec, Finished 2 0.41367506980895996
+Received 1 bytes, responding same
+Connected
+Client Hello 1 0.0
+Hello Verify Request 0.0001933574676513672
+Client Hello 2 0.01672816276550293
+Server Hello, Certificate, Server Hello Done 0.016877174377441406
+Client Key Exchange 0.4104485511779785
+Change Cipher Spec, Finished 1 0.42635512351989746
+Change Cipher Spec, Finished 2 0.4265148639678955
+Received 1 bytes, responding same
+Connected
+Client Hello 1 0.0
+Hello Verify Request 0.00011563301086425781
+Client Hello 2 0.013456344604492188
+Server Hello, Certificate, Server Hello Done 0.013679027557373047
+Client Key Exchange 0.43036818504333496
+Change Cipher Spec, Finished 1 0.4409756660461426
+Change Cipher Spec, Finished 2 0.4411172866821289
+Received 1 bytes, responding same
+Connected
+Client Hello 1 0.0
+Hello Verify Request 0.00012063980102539062
+Client Hello 2 0.008975744247436523
+Server Hello, Certificate, Server Hello Done 0.009135723114013672
+Client Key Exchange 0.4054112434387207
+Change Cipher Spec, Finished 1 0.4167652130126953
+Change Cipher Spec, Finished 2 0.41687822341918945
+Received 1 bytes, responding same
+Connected
+Client Hello 1 0.0
+Hello Verify Request 8.296966552734375e-05
+Client Hello 2 0.01773810386657715
+Server Hello, Certificate, Server Hello Done 0.017908811569213867
+Client Key Exchange 0.4139702320098877
+Change Cipher Spec, Finished 1 0.42930150032043457
+Change Cipher Spec, Finished 2 0.4294304847717285
+Received 1 bytes, responding same
+Connected
+Client Hello 1 0.0
+Hello Verify Request 8.177757263183594e-05
+Client Hello 2 0.009220600128173828
+Server Hello, Certificate, Server Hello Done 0.009371280670166016
+Client Key Exchange 0.40265345573425293
+Change Cipher Spec, Finished 1 0.414747953414917
+Change Cipher Spec, Finished 2 0.4148740768432617
+Received 1 bytes, responding same
+Connected
+Client Hello 1 0.0
+Hello Verify Request 6.771087646484375e-05
+Client Hello 2 0.009397745132446289
+Server Hello, Certificate, Server Hello Done 0.009524106979370117
+Client Key Exchange 0.4114384651184082
+Change Cipher Spec, Finished 1 0.4239623546600342
+Change Cipher Spec, Finished 2 0.42409539222717285
+Received 1 bytes, responding same
+Connected
+Client Hello 1 0.0
+Hello Verify Request 9.942054748535156e-05
+Client Hello 2 0.009552955627441406
+Server Hello, Certificate, Server Hello Done 0.009708166122436523
+Client Key Exchange 0.42792248725891113
+Change Cipher Spec, Finished 1 0.4416830539703369
+Change Cipher Spec, Finished 2 0.44180917739868164
+Received 1 bytes, responding same
+Connected
+Client Hello 1 0.0
+Hello Verify Request 0.00011968612670898438
+Client Hello 2 0.009407758712768555
+Server Hello, Certificate, Server Hello Done 0.009559154510498047
+Client Key Exchange 0.4054524898529053
+Change Cipher Spec, Finished 1 0.4176979064941406
+Change Cipher Spec, Finished 2 0.4178428649902344
+Received 1 bytes, responding same
+Connected
+Client Hello 1 0.0
+Hello Verify Request 7.486343383789062e-05
+Client Hello 2 0.008903026580810547
+Server Hello, Certificate, Server Hello Done 0.00905466079711914
+Client Key Exchange 0.40553998947143555
+Change Cipher Spec, Finished 1 0.4173123836517334
+Change Cipher Spec, Finished 2 0.4174506664276123
+Received 1 bytes, responding same
+Connected
+Client Hello 1 0.0
+Hello Verify Request 0.00011086463928222656
+Client Hello 2 0.009175777435302734
+Server Hello, Certificate, Server Hello Done 0.009392976760864258
+Client Key Exchange 0.41208600997924805
+Change Cipher Spec, Finished 1 0.4258902072906494
+Change Cipher Spec, Finished 2 0.42606616020202637
+Received 1 bytes, responding same
+Connected
+Client Hello 1 0.0
+Hello Verify Request 9.775161743164062e-05
+Client Hello 2 0.010432243347167969
+Server Hello, Certificate, Server Hello Done 0.010602712631225586
+Client Key Exchange 0.4127376079559326
+Change Cipher Spec, Finished 1 0.42455077171325684
+Change Cipher Spec, Finished 2 0.42473888397216797
+Received 1 bytes, responding same
+Connected
+Client Hello 1 0.0
+Hello Verify Request 0.0001068115234375
+Client Hello 2 0.00920557975769043
+Server Hello, Certificate, Server Hello Done 0.009390115737915039
+Client Key Exchange 0.4057774543762207
+Change Cipher Spec, Finished 1 0.41784095764160156
+Change Cipher Spec, Finished 2 0.4179873466491699
+Received 1 bytes, responding same
+Connected
+Client Hello 1 0.0
+Hello Verify Request 0.00011181831359863281
+Client Hello 2 0.009122610092163086
+Server Hello, Certificate, Server Hello Done 0.009287118911743164
+Client Key Exchange 0.4058506488800049
+Change Cipher Spec, Finished 1 0.4177217483520508
+Change Cipher Spec, Finished 2 0.41788411140441895
+Received 1 bytes, responding same
+Connected
+Client Hello 1 0.0
+Hello Verify Request 0.00010609626770019531
+Client Hello 2 0.010188579559326172
+Server Hello, Certificate, Server Hello Done 0.010367155075073242
+Client Key Exchange 0.40215063095092773
+Change Cipher Spec, Finished 1 0.41806936264038086
+Change Cipher Spec, Finished 2 0.41820383071899414
+Received 1 bytes, responding same
+Connected
+Client Hello 1 0.0
+Hello Verify Request 0.00012135505676269531
+Client Hello 2 0.009390830993652344
+Server Hello, Certificate, Server Hello Done 0.009547710418701172
+Client Key Exchange 0.41129589080810547
+Change Cipher Spec, Finished 1 0.4235968589782715
+Change Cipher Spec, Finished 2 0.4237236976623535
+Received 1 bytes, responding same
+Connected
+Client Hello 1 0.0
+Hello Verify Request 0.00010585784912109375
+Client Hello 2 0.009946823120117188
+Server Hello, Certificate, Server Hello Done 0.010128498077392578
+Client Key Exchange 0.4117403030395508
+Change Cipher Spec, Finished 1 0.42458462715148926
+Change Cipher Spec, Finished 2 0.4247167110443115
+Received 1 bytes, responding same
+Connected
+Client Hello 1 0.0
+Hello Verify Request 7.653236389160156e-05
+Client Hello 2 0.009042024612426758
+Server Hello, Certificate, Server Hello Done 0.009178400039672852
+Client Key Exchange 0.40514492988586426
+Change Cipher Spec, Finished 1 0.418109655380249
+Change Cipher Spec, Finished 2 0.41823649406433105
+Received 1 bytes, responding same
+Connected
+Client Hello 1 0.0
+Hello Verify Request 8.749961853027344e-05
+Client Hello 2 0.015969038009643555
+Server Hello, Certificate, Server Hello Done 0.01612377166748047
+Client Key Exchange 0.4108295440673828
+Change Cipher Spec, Finished 1 0.42525172233581543
+Change Cipher Spec, Finished 2 0.42541956901550293
+Received 1 bytes, responding same
+Connected
+Client Hello 1 0.0
+Hello Verify Request 7.891654968261719e-05
+Client Hello 2 0.008625984191894531
+Server Hello, Certificate, Server Hello Done 0.008785486221313477
+Client Key Exchange 0.4014625549316406
+Change Cipher Spec, Finished 1 0.4138762950897217
+Change Cipher Spec, Finished 2 0.4140012264251709
+Received 1 bytes, responding same
+Connected
+Client Hello 1 0.0
+Hello Verify Request 7.605552673339844e-05
+Client Hello 2 0.009409904479980469
+Server Hello, Certificate, Server Hello Done 0.009557247161865234
+Client Key Exchange 0.4115328788757324
+Change Cipher Spec, Finished 1 0.43451762199401855
+Change Cipher Spec, Finished 2 0.43466877937316895
+Received 1 bytes, responding same
+Connected
+Client Hello 1 0.0
+Hello Verify Request 9.775161743164062e-05
+Client Hello 2 0.009688138961791992
+Server Hello, Certificate, Server Hello Done 0.009841680526733398
+Client Key Exchange 0.4204556941986084
+Change Cipher Spec, Finished 1 0.43521666526794434
+Change Cipher Spec, Finished 2 0.4353485107421875
+Received 1 bytes, responding same

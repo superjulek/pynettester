@@ -24,7 +24,7 @@ wolfssl.WolfSSL.enable_debug()
 
 
 class DTLSServerWolfSSL(Server):
-    MESSAGES = [
+    MESSAGES_DHE = [
         'Client Hello 1',
         'Hello Verify Request',
         'Client Hello 2',
@@ -33,6 +33,15 @@ class DTLSServerWolfSSL(Server):
         'Client Key Exchange',
         'Change Cipher Spec, Encrypted Handshake Message 1',
         'Change Cipher Spec, Encrypted Handshake Message 2',
+    ]
+    MESSAGES_RSA = [
+        'Client Hello 1',
+        'Hello Verify Request',
+        'Client Hello 2',
+        'Server Hello, Certificate, Server Hello Done',
+        'Client Key Exchange',
+        'Change Cipher Spec, Finished 1',
+        'Change Cipher Spec, Finished 2',
     ]
     def __init__(self, address: str, port: int) -> None:
         self.ctx = wolfssl.SSLContext(wolfssl.PROTOCOL_DTLSv1_2, server_side=True)
@@ -47,8 +56,9 @@ class DTLSServerWolfSSL(Server):
 
 
     def wait_for_connection(self):
-        self.ctx.set_ciphers('DHE-RSA-AES128-SHA')
-        #self.ctx.set_ciphers('DEFAULT')
+        #self.ctx.set_ciphers('DHE-RSA-AES128-SHA')
+        # self.ctx.set_ciphers('DEFAULT')
+        self.ctx.set_ciphers('AES128-SHA')
         self.ctx.verify_mode = wolfssl.CERT_NONE
         self.ss = self.ctx.wrap_socket(self.socket)
         wolfssl._lib.wolfSSL_dtls_set_timeout_init(self.ss.native_object, 20)
@@ -66,13 +76,14 @@ class DTLSServerWolfSSL(Server):
 
 
         sniffer.stop()
-        if len(sniffer.results) != len(self.MESSAGES):
+        if len(sniffer.results) not in[len(self.MESSAGES_DHE), len(self.MESSAGES_RSA)]:
             print(f'Different number of messages {len(sniffer.results)}')
         else:
+            mes = self.MESSAGES_DHE if len(sniffer.results) == len(self.MESSAGES_DHE) else self.MESSAGES_RSA
             p0 = sniffer.results[0].time
             for idx, p in enumerate(sniffer.results):
                 p: sc.Packet
-                print(f'{self.MESSAGES[idx]} {(p.time - p0)}')
+                print(f'{mes[idx]} {(p.time - p0)}')
 
     def receive(self) -> bytes:
         return self.ss.read(cfg.BUFFER_SIZE)

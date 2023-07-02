@@ -1,0 +1,84 @@
+main(): This is RIOT! (Version: 2022.07-devel-2726-ga9fe1-minimal_ike)
+RIOT wolfSSL DTLS testing implementation
+All up, running the shell now
+> ifconfig 5 add fc::02/120
+success: added fc::02/120 to interface 5
+> ps
+	pid | name                 | state    Q | pri | stack  ( used) ( free) | base addr  | current
+	  - | isr_stack            | -        - |   - |    512 (  256) (  256) | 0x20000000 | 0x200001c8
+	  1 | main                 | running  Q |   7 |  10240 (  872) ( 9368) | 0x2000086c | 0x20002e14
+	  2 | ipv6_esp             | bl rx    _ |   5 |   4096 (  444) ( 3652) | 0x200045a8 | 0x200053ec
+	  3 | ipv6                 | bl rx    _ |   4 |   4096 (  516) ( 3580) | 0x20003148 | 0x20003f8c
+	  4 | udp                  | bl rx    _ |   6 |   1024 (  252) (  772) | 0x200079c8 | 0x20007ccc
+	  5 | stm32_eth            | bl anyfl _ |   2 |   1920 (  380) ( 1540) | 0x20005a08 | 0x200060cc
+	    | SUM                  |            |     |  21888 ( 2720) (19168)
+> ike_control -i fc::01
+Stats
+2251723 us total established in
+      2 us reset context
+ 696720 us init context
+    819 us build INIT
+    263 us send INIT
+   6553 us receive INIT
+1540267 us parse INIT
+   1475 us build AUTH
+    253 us send AUTH
+   1937 us receive AUTH
+   1870 us parse AUTH
+ 696668 us generate_key
+1539422 us get_secret
+> ps
+	pid | name                 | state    Q | pri | stack  ( used) ( free) | base addr  | current
+	  - | isr_stack            | -        - |   - |    512 (  256) (  256) | 0x20000000 | 0x200001c8
+	  1 | main                 | running  Q |   7 |  10240 ( 6828) ( 3412) | 0x2000086c | 0x2000185c
+	  2 | ipv6_esp             | bl rx    _ |   5 |   4096 (  444) ( 3652) | 0x200045a8 | 0x200053ec
+	  3 | ipv6                 | bl rx    _ |   4 |   4096 (  516) ( 3580) | 0x20003148 | 0x20003f8c
+	  4 | udp                  | bl rx    _ |   6 |   1024 (  308) (  716) | 0x200079c8 | 0x20007ccc
+	  5 | stm32_eth            | bl anyfl _ |   2 |   1920 (  380) ( 1540) | 0x20005a08 | 0x200060cc
+	    | SUM                  |            |     |  21888 ( 8732) (13156)
+> udps fc::01 100
+Connecting
+UDP: Sending first message ...
+Sending 100 bytes
+> ps
+	pid | name                 | state    Q | pri | stack  ( used) ( free) | base addr  | current
+	  - | isr_stack            | -        - |   - |    512 (  256) (  256) | 0x20000000 | 0x200001c8
+	  1 | main                 | running  Q |   7 |  10240 ( 6828) ( 3412) | 0x2000086c | 0x20002e14
+	  2 | ipv6_esp             | bl rx    _ |   5 |   4096 ( 3116) (  980) | 0x200045a8 | 0x200053ec
+	  3 | ipv6                 | bl rx    _ |   4 |   4096 ( 2924) ( 1172) | 0x20003148 | 0x20003f8c
+	  4 | udp                  | bl rx    _ |   6 |   1024 (  308) (  716) | 0x200079c8 | 0x20007ccc
+	  5 | stm32_eth            | bl anyfl _ |   2 |   1920 (  380) ( 1540) | 0x20005a08 | 0x200060cc
+	    | SUM                  |            |     |  21888 (13812) ( 8076)
+> udps fc::01 500
+Sending 500 bytes
+> ps
+	pid | name                 | state    Q | pri | stack  ( used) ( free) | base addr  | current
+	  - | isr_stack            | -        - |   - |    512 (  256) (  256) | 0x20000000 | 0x200001c8
+	  1 | main                 | running  Q |   7 |  10240 ( 6828) ( 3412) | 0x2000086c | 0x20002d94
+	  2 | ipv6_esp             | bl rx    _ |   5 |   4096 ( 3116) (  980) | 0x200045a8 | 0x200053ec
+	  3 | ipv6                 | bl rx    _ |   4 |   4096 ( 2924) ( 1172) | 0x20003148 | 0x20003f8c
+	  4 | udp                  | bl rx    _ |   6 |   1024 (  308) (  716) | 0x200079c8 | 0x20007ccc
+	  5 | stm32_eth            | bl anyfl _ |   2 |   1920 (  380) ( 1540) | 0x20005a08 | 0x200060cc
+	    | SUM                  |            |     |  21888 (13812) ( 8076)
+> udps fc::01 1000
+Sending 1000 bytes
+> ps
+	pid | name                 | state    Q | pri | stack  ( used) ( free) | base addr  | current
+	  - | isr_stack            | -        - |   - |    512 (  256) (  256) | 0x20000000 | 0x200001c8
+	  1 | main                 | running  Q |   7 |  10240 ( 6828) ( 3412) | 0x2000086c | 0x20002d94
+	  2 | ipv6_esp             | bl rx    _ |   5 |   4096 ( 3116) (  980) | 0x200045a8 | 0x200053ec
+	  3 | ipv6                 | bl rx    _ |   4 |   4096 ( 2924) ( 1172) | 0x20003148 | 0x20003f8c
+	  4 | udp                  | bl rx    _ |   6 |   1024 (  308) (  716) | 0x200079c8 | 0x20007ccc
+	  5 | stm32_eth            | bl anyfl _ |   2 |   1920 (  380) ( 1540) | 0x20005a08 | 0x200060cc
+	    | SUM                  |            |     |  21888 (13812) ( 8076)
+> ike_control -t
+> ps
+	pid | name                 | state    Q | pri | stack  ( used) ( free) | base addr  | current
+	  - | isr_stack            | -        - |   - |    512 (  256) (  256) | 0x20000000 | 0x200001c8
+	  1 | main                 | running  Q |   7 |  10240 ( 6828) ( 3412) | 0x2000086c | 0x2000222c
+	  2 | ipv6_esp             | bl rx    _ |   5 |   4096 ( 3116) (  980) | 0x200045a8 | 0x200053ec
+	  3 | ipv6                 | bl rx    _ |   4 |   4096 ( 2924) ( 1172) | 0x20003148 | 0x20003f8c
+	  4 | udp                  | bl rx    _ |   6 |   1024 (  308) (  716) | 0x200079c8 | 0x20007ccc
+	  5 | stm32_eth            | bl anyfl _ |   2 |   1920 (  380) ( 1540) | 0x20005a08 | 0x200060cc
+	    | SUM                  |            |     |  21888 (13812) ( 8076)
+>

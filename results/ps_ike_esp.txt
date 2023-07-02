@@ -1,0 +1,109 @@
+> ps
+	pid | name                 | state    Q | pri | stack  ( used) ( free) | base addr  | current
+	  - | isr_stack            | -        - |   - |   2048 (  356) ( 1692) | 0x3ffe8000 | 0x3ffe8800
+	  1 | ppT                  | bl mutex _ |   2 |   3640 ( 1304) ( 2336) | 0x3fffa620 | 0x3fffb2c0
+	  2 | pmT                  | bl mutex _ |   4 |   1080 (  392) (  688) | 0x3fffb49c | 0x3fffb760
+	  3 | rtT                  | bl mutex _ |   3 |   2104 ( 1064) ( 1040) | 0x3fffb8dc | 0x3fffbfa0
+	  4 | esp_events           | bl mutex _ |   5 |   2104 (  980) ( 1124) | 0x3fffc748 | 0x3fffcdf0
+	  5 | idle                 | pending  Q |  31 |   1024 (  240) (  784) | 0x3ffee01c | 0x3ffee340
+	  6 | main                 | running  Q |  15 |  10240 ( 1324) ( 8916) | 0x3ffee41c | 0x3fff0740
+	  7 | ipv6_esp             | bl rx    _ |  13 |   4096 (  604) ( 3492) | 0x3fff3c28 | 0x3fff49e0
+	  8 | ipv6                 | bl rx    _ |  12 |   4096 (  668) ( 3428) | 0x3fff2c28 | 0x3fff3a60
+	  9 | udp                  | bl rx    _ |  14 |   3072 (  388) ( 2684) | 0x3fff6c20 | 0x3fff76b0
+	 10 | netif-esp-wifi       | bl anyfl _ |  10 |   1536 (  868) (  668) | 0x3fff12c0 | 0x3fff1790
+	    | SUM                  |            |     |  35040 ( 8188) (26852)
+> ike_control -i fc::01
+Stats
+14280619 us total established in
+     24 us reset context
+4273447 us init context
+   1710 us build INIT
+   3460 us send INIT
+  13075 us receive INIT
+9962843 us parse INIT
+   3332 us build AUTH
+   3310 us send AUTH
+   9928 us receive AUTH
+   6949 us parse AUTH
+4273120 us generate_key
+9961341 us get_secret
+> ps
+	pid | name                 | state    Q | pri | stack  ( used) ( free) | base addr  | current
+	  - | isr_stack            | -        - |   - |   2048 (  356) ( 1692) | 0x3ffe8000 | 0x3ffe8800
+	  1 | ppT                  | bl mutex _ |   2 |   3640 ( 1304) ( 2336) | 0x3fffa620 | 0x3fffb2c0
+	  2 | pmT                  | bl mutex _ |   4 |   1080 (  392) (  688) | 0x3fffb49c | 0x3fffb760
+	  3 | rtT                  | bl mutex _ |   3 |   2104 ( 1064) ( 1040) | 0x3fffb8dc | 0x3fffbfa0
+	  4 | esp_events           | bl mutex _ |   5 |   2104 (  980) ( 1124) | 0x3fffc748 | 0x3fffcdf0
+	  5 | idle                 | pending  Q |  31 |   1024 (  240) (  784) | 0x3ffee01c | 0x3ffee340
+	  6 | main                 | running  Q |  15 |  10240 ( 7136) ( 3104) | 0x3ffee41c | 0x3fff0740
+	  7 | ipv6_esp             | bl rx    _ |  13 |   4096 (  604) ( 3492) | 0x3fff3c28 | 0x3fff49e0
+	  8 | ipv6                 | bl rx    _ |  12 |   4096 (  728) ( 3368) | 0x3fff2c28 | 0x3fff3a60
+	  9 | udp                  | bl rx    _ |  14 |   3072 (  500) ( 2572) | 0x3fff6c20 | 0x3fff76b0
+	 10 | netif-esp-wifi       | bl anyfl _ |  10 |   1536 (  868) (  668) | 0x3fff12c0 | 0x3fff1790
+	    | SUM                  |            |     |  35040 (14172) (20868)
+> udps fc::01 100
+Connecting
+UDP: Sending first message ...
+Sending 100 bytes
+> ps
+	pid | name                 | state    Q | pri | stack  ( used) ( free) | base addr  | current
+	  - | isr_stack            | -        - |   - |   2048 (  356) ( 1692) | 0x3ffe8000 | 0x3ffe8800
+	  1 | ppT                  | bl mutex _ |   2 |   3640 ( 1304) ( 2336) | 0x3fffa620 | 0x3fffb2c0
+	  2 | pmT                  | bl mutex _ |   4 |   1080 (  392) (  688) | 0x3fffb49c | 0x3fffb760
+	  3 | rtT                  | bl mutex _ |   3 |   2104 ( 1064) ( 1040) | 0x3fffb8dc | 0x3fffbfa0
+	  4 | esp_events           | bl mutex _ |   5 |   2104 (  980) ( 1124) | 0x3fffc748 | 0x3fffcdf0
+	  5 | idle                 | pending  Q |  31 |   1024 (  240) (  784) | 0x3ffee01c | 0x3ffee340
+	  6 | main                 | running  Q |  15 |  10240 ( 7136) ( 3104) | 0x3ffee41c | 0x3fff09b0
+	  7 | ipv6_esp             | bl rx    _ |  13 |   4096 ( 3184) (  912) | 0x3fff3c28 | 0x3fff49e0
+	  8 | ipv6                 | bl rx    _ |  12 |   4096 ( 3024) ( 1072) | 0x3fff2c28 | 0x3fff3a60
+	  9 | udp                  | bl rx    _ |  14 |   3072 (  500) ( 2572) | 0x3fff6c20 | 0x3fff76b0
+	 10 | netif-esp-wifi       | bl anyfl _ |  10 |   1536 (  868) (  668) | 0x3fff12c0 | 0x3fff1790
+	    | SUM                  |            |     |  35040 (19048) (15992)
+> udps fc::01 500
+Sending 500 bytes
+> ps
+	pid | name                 | state    Q | pri | stack  ( used) ( free) | base addr  | current
+	  - | isr_stack            | -        - |   - |   2048 (  356) ( 1692) | 0x3ffe8000 | 0x3ffe8800
+	  1 | ppT                  | bl mutex _ |   2 |   3640 ( 1304) ( 2336) | 0x3fffa620 | 0x3fffb2c0
+	  2 | pmT                  | bl mutex _ |   4 |   1080 (  392) (  688) | 0x3fffb49c | 0x3fffb760
+	  3 | rtT                  | bl mutex _ |   3 |   2104 ( 1064) ( 1040) | 0x3fffb8dc | 0x3fffbfa0
+	  4 | esp_events           | bl mutex _ |   5 |   2104 (  980) ( 1124) | 0x3fffc748 | 0x3fffcdf0
+	  5 | idle                 | pending  Q |  31 |   1024 (  240) (  784) | 0x3ffee01c | 0x3ffee340
+	  6 | main                 | running  Q |  15 |  10240 ( 7136) ( 3104) | 0x3ffee41c | 0x3fff0740
+	  7 | ipv6_esp             | bl rx    _ |  13 |   4096 ( 3184) (  912) | 0x3fff3c28 | 0x3fff49e0
+	  8 | ipv6                 | bl rx    _ |  12 |   4096 ( 3164) (  932) | 0x3fff2c28 | 0x3fff3a60
+	  9 | udp                  | bl rx    _ |  14 |   3072 (  500) ( 2572) | 0x3fff6c20 | 0x3fff76b0
+	 10 | netif-esp-wifi       | bl anyfl _ |  10 |   1536 (  868) (  668) | 0x3fff12c0 | 0x3fff1790
+	    | SUM                  |            |     |  35040 (19188) (15852)
+> udps fc::01 1000
+Sending 1000 bytes
+> ps
+	pid | name                 | state    Q | pri | stack  ( used) ( free) | base addr  | current
+	  - | isr_stack            | -        - |   - |   2048 (  356) ( 1692) | 0x3ffe8000 | 0x3ffe8800
+	  1 | ppT                  | bl mutex _ |   2 |   3640 ( 1304) ( 2336) | 0x3fffa620 | 0x3fffb2c0
+	  2 | pmT                  | bl mutex _ |   4 |   1080 (  392) (  688) | 0x3fffb49c | 0x3fffb760
+	  3 | rtT                  | bl mutex _ |   3 |   2104 ( 1064) ( 1040) | 0x3fffb8dc | 0x3fffbfa0
+	  4 | esp_events           | bl mutex _ |   5 |   2104 (  980) ( 1124) | 0x3fffc748 | 0x3fffcdf0
+	  5 | idle                 | pending  Q |  31 |   1024 (  240) (  784) | 0x3ffee01c | 0x3ffee340
+	  6 | main                 | running  Q |  15 |  10240 ( 7136) ( 3104) | 0x3ffee41c | 0x3fff0740
+	  7 | ipv6_esp             | bl rx    _ |  13 |   4096 ( 3184) (  912) | 0x3fff3c28 | 0x3fff49e0
+	  8 | ipv6                 | bl rx    _ |  12 |   4096 ( 3164) (  932) | 0x3fff2c28 | 0x3fff3a60
+	  9 | udp                  | bl rx    _ |  14 |   3072 (  500) ( 2572) | 0x3fff6c20 | 0x3fff76b0
+	 10 | netif-esp-wifi       | bl anyfl _ |  10 |   1536 (  868) (  668) | 0x3fff12c0 | 0x3fff1790
+	    | SUM                  |            |     |  35040 (19188) (15852)
+> ike_control -t
+> ps
+	pid | name                 | state    Q | pri | stack  ( used) ( free) | base addr  | current
+	  - | isr_stack            | -        - |   - |   2048 (  356) ( 1692) | 0x3ffe8000 | 0x3ffe8800
+	  1 | ppT                  | bl mutex _ |   2 |   3640 ( 1304) ( 2336) | 0x3fffa620 | 0x3fffb2c0
+	  2 | pmT                  | bl mutex _ |   4 |   1080 (  392) (  688) | 0x3fffb49c | 0x3fffb760
+	  3 | rtT                  | bl mutex _ |   3 |   2104 ( 1064) ( 1040) | 0x3fffb8dc | 0x3fffbfa0
+	  4 | esp_events           | bl mutex _ |   5 |   2104 (  980) ( 1124) | 0x3fffc748 | 0x3fffcdf0
+	  5 | idle                 | pending  Q |  31 |   1024 (  240) (  784) | 0x3ffee01c | 0x3ffee340
+	  6 | main                 | running  Q |  15 |  10240 ( 7136) ( 3104) | 0x3ffee41c | 0x3fff0740
+	  7 | ipv6_esp             | bl rx    _ |  13 |   4096 ( 3184) (  912) | 0x3fff3c28 | 0x3fff49e0
+	  8 | ipv6                 | bl rx    _ |  12 |   4096 ( 3164) (  932) | 0x3fff2c28 | 0x3fff3a60
+	  9 | udp                  | bl rx    _ |  14 |   3072 (  500) ( 2572) | 0x3fff6c20 | 0x3fff76b0
+	 10 | netif-esp-wifi       | bl anyfl _ |  10 |   1536 (  868) (  668) | 0x3fff12c0 | 0x3fff1790
+	    | SUM                  |            |     |  35040 (19188) (15852)
+>

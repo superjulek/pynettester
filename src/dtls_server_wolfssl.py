@@ -56,9 +56,9 @@ class DTLSServerWolfSSL(Server):
 
 
     def wait_for_connection(self):
-        #self.ctx.set_ciphers('DHE-RSA-AES128-SHA')
+        self.ctx.set_ciphers('DHE-RSA-AES128-SHA')
         # self.ctx.set_ciphers('DEFAULT')
-        self.ctx.set_ciphers('AES128-SHA')
+        # self.ctx.set_ciphers('AES128-SHA')
         self.ctx.verify_mode = wolfssl.CERT_NONE
         self.ss = self.ctx.wrap_socket(self.socket)
         wolfssl._lib.wolfSSL_dtls_set_timeout_init(self.ss.native_object, 20)

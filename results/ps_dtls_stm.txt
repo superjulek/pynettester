@@ -1,0 +1,64 @@
+main(): This is RIOT! (Version: 2022.07-devel-2726-ga9fe1-minimal_ike)
+RIOT wolfSSL DTLS testing implementation
+All up, running the shell now
+> ifconfig 5 add fc::02/120
+success: added fc::02/120 to interface 5
+> ps
+	pid | name                 | state    Q | pri | stack  ( used) ( free) | base addr  | current
+	  - | isr_stack            | -        - |   - |    512 (  256) (  256) | 0x20000000 | 0x200001c8
+	  1 | main                 | running  Q |   7 |  10240 (  872) ( 9368) | 0x2000086c | 0x20002e14
+	  2 | ipv6_esp             | bl rx    _ |   5 |   4096 (  444) ( 3652) | 0x200045a8 | 0x200053ec
+	  3 | ipv6                 | bl rx    _ |   4 |   4096 (  516) ( 3580) | 0x20003148 | 0x20003f8c
+	  4 | udp                  | bl rx    _ |   6 |   1024 (  252) (  772) | 0x200079c8 | 0x20007ccc
+	  5 | stm32_eth            | bl anyfl _ |   2 |   1920 (  380) ( 1540) | 0x20005a08 | 0x200060cc
+	    | SUM                  |            |     |  21888 ( 2720) (19168)
+> dtlss fc::01 0
+Connecting
+DTLS: Connecting to server
+ 565951 us wc generate
+1276479 us wc agree
+1913050 total
+wolfSSL: Setting peer address and port
+> ps
+	pid | name                 | state    Q | pri | stack  ( used) ( free) | base addr  | current
+	  - | isr_stack            | -        - |   - |    512 (  256) (  256) | 0x20000000 | 0x200001c8
+	  1 | main                 | running  Q |   7 |  10240 ( 2324) ( 7916) | 0x2000086c | 0x20002c9c
+	  2 | ipv6_esp             | bl rx    _ |   5 |   4096 (  444) ( 3652) | 0x200045a8 | 0x200053ec
+	  3 | ipv6                 | bl rx    _ |   4 |   4096 (  516) ( 3580) | 0x20003148 | 0x20003f8c
+	  4 | udp                  | bl rx    _ |   6 |   1024 (  308) (  716) | 0x200079c8 | 0x20007ccc
+	  5 | stm32_eth            | bl anyfl _ |   2 |   1920 (  380) ( 1540) | 0x20005a08 | 0x200060cc
+	    | SUM                  |            |     |  21888 ( 4228) (17660)
+> dtlss fc::01 100
+Sending 100 bytes
+> ps
+	pid | name                 | state    Q | pri | stack  ( used) ( free) | base addr  | current
+	  - | isr_stack            | -        - |   - |    512 (  256) (  256) | 0x20000000 | 0x200001c8
+	  1 | main                 | running  Q |   7 |  10240 ( 2324) ( 7916) | 0x2000086c | 0x20002ca4
+	  2 | ipv6_esp             | bl rx    _ |   5 |   4096 (  444) ( 3652) | 0x200045a8 | 0x200053ec
+	  3 | ipv6                 | bl rx    _ |   4 |   4096 (  516) ( 3580) | 0x20003148 | 0x20003f8c
+	  4 | udp                  | bl rx    _ |   6 |   1024 (  308) (  716) | 0x200079c8 | 0x20007ccc
+	  5 | stm32_eth            | bl anyfl _ |   2 |   1920 (  380) ( 1540) | 0x20005a08 | 0x200060cc
+	    | SUM                  |            |     |  21888 ( 4228) (17660)
+> dtlss fc::01 500
+Sending 500 bytes
+> ps
+	pid | name                 | state    Q | pri | stack  ( used) ( free) | base addr  | current
+	  - | isr_stack            | -        - |   - |    512 (  256) (  256) | 0x20000000 | 0x200001c8
+	  1 | main                 | running  Q |   7 |  10240 ( 2324) ( 7916) | 0x2000086c | 0x20002e14
+	  2 | ipv6_esp             | bl rx    _ |   5 |   4096 (  444) ( 3652) | 0x200045a8 | 0x200053ec
+	  3 | ipv6                 | bl rx    _ |   4 |   4096 (  516) ( 3580) | 0x20003148 | 0x20003f8c
+	  4 | udp                  | bl rx    _ |   6 |   1024 (  308) (  716) | 0x200079c8 | 0x20007ccc
+	  5 | stm32_eth            | bl anyfl _ |   2 |   1920 (  380) ( 1540) | 0x20005a08 | 0x200060cc
+	    | SUM                  |            |     |  21888 ( 4228) (17660)
+> dtlss fc::01 1000
+Sending 1000 bytes
+> ps
+	pid | name                 | state    Q | pri | stack  ( used) ( free) | base addr  | current
+	  - | isr_stack            | -        - |   - |    512 (  256) (  256) | 0x20000000 | 0x200001c8
+	  1 | main                 | running  Q |   7 |  10240 ( 2324) ( 7916) | 0x2000086c | 0x20002ca4
+	  2 | ipv6_esp             | bl rx    _ |   5 |   4096 (  444) ( 3652) | 0x200045a8 | 0x200053ec
+	  3 | ipv6                 | bl rx    _ |   4 |   4096 (  516) ( 3580) | 0x20003148 | 0x20003f8c
+	  4 | udp                  | bl rx    _ |   6 |   1024 (  308) (  716) | 0x200079c8 | 0x20007ccc
+	  5 | stm32_eth            | bl anyfl _ |   2 |   1920 (  380) ( 1540) | 0x20005a08 | 0x200060cc
+	    | SUM                  |            |     |  21888 ( 4228) (17660)
+>

@@ -1,29 +1,34 @@
 import numpy as np
+import pathlib
 
 from graphs import draw_neg_pie_chart
 
 from tabulate import tabulate
 
 
-FILE = 'results/neg_esp.txt'
-FILE = 'results/neg_stm.txt'
+BASE_DIR = pathlib.Path(__file__).parent.parent
+FILE = BASE_DIR / 'results/neg_esp.txt'
+#FILE = BASE_DIR / 'results/neg_stm.txt'
+
+headers_d = {
+    'total established': 'Total negotiation',
+    'reset context': 'Resetting context',
+    'init context': 'Initializing context',
+    'build INIT': 'Building INIT message',
+    'send INIT': 'Sending INIT message',
+    'receive INIT': 'Receiving INIT message',
+    'parse INIT': 'Parsing INIT message',
+    'build AUTH': 'Building AUTH message',
+    'send AUTH': 'Sending AUTH message',
+    'receive AUTH': 'Receiving AUTH message',
+    'parse AUTH': 'Parsing AUTH message',
+    'generate_key': 'Generating DH key',
+    'get_secret': 'Computing DH shared secret',
+}
+
 
 def parse_ike_neg_text(text: str):
-    headers = [
-       'total established',
-       'reset context',
-       'init context',
-       'build INIT',
-       'send INIT',
-       'receive INIT',
-       'parse INIT',
-       'build AUTH',
-       'send AUTH',
-       'receive AUTH',
-       'parse AUTH',
-       'generate_key',
-       'get_secret'
-    ]
+    headers = headers_d.keys()
     values = {}
     for h in headers:
         values[h] = [l.strip().split()[0] for l in text.splitlines() if h in l]
@@ -59,10 +64,13 @@ def plot_neg(text: str):
         tab.append([k, np.average(fvals) / 1000, np.std(fvals) / 1000])
     latex_table = tabulate(tab, headers="firstrow", tablefmt="latex")
     print(latex_table)
+    headers_d['other'] = 'Rest of processing'
+    headers_d['init context - generate key'] = 'Initializing context - generating DH key'
+    headers_d['parse INIT - get_secret'] = 'Parsing INIT message - computing DH shared secret'
+    draw_neg_pie_chart(bigv, 'nego_ike_esp_1.png', headers_d)
+    draw_neg_pie_chart(normalv, 'nego_ike_esp_2.png', headers_d)
+    draw_neg_pie_chart(smallv, 'nego_ike_esp_3.png', headers_d)
 
-    draw_neg_pie_chart(bigv)
-    draw_neg_pie_chart(normalv)
-    draw_neg_pie_chart(smallv)
 
 if __name__ == '__main__':
     with open(FILE, 'r') as negfile:

@@ -50,6 +50,19 @@ Sending 100 bytes
 	    | SUM                  |            |     |  30944 ( 9108) (21836)
 > dtlss fc::01 500
 Sending 500 bytes
+> ps
+	pid | name                 | state    Q | pri | stack  ( used) ( free) | base addr  | current
+	  - | isr_stack            | -        - |   - |   2048 (  356) ( 1692) | 0x3ffe8000 | 0x3ffe8800
+	  1 | ppT                  | bl mutex _ |   2 |   3640 ( 1312) ( 2328) | 0x3fff8568 | 0x3fff9200
+	  2 | pmT                  | bl mutex _ |   4 |   1080 (  384) (  696) | 0x3fff93e4 | 0x3fff96b0
+	  3 | rtT                  | bl mutex _ |   3 |   2104 ( 1056) ( 1048) | 0x3fff9824 | 0x3fff9ef0
+	  4 | esp_events           | bl mutex _ |   5 |   2104 (  860) ( 1244) | 0x3fffa690 | 0x3fffad40
+	  5 | idle                 | pending  Q |  31 |   1024 (  240) (  784) | 0x3ffee01c | 0x3ffee340
+	  6 | main                 | running  Q |  15 |  10240 ( 2752) ( 7488) | 0x3ffee41c | 0x3fff09b0
+	  7 | ipv6                 | bl rx    _ |  12 |   4096 (  776) ( 3320) | 0x3fff2c28 | 0x3fff3a70
+	  8 | udp                  | bl rx    _ |  14 |   3072 (  504) ( 2568) | 0x3fff5754 | 0x3fff61e0
+	  9 | netif-esp-wifi       | bl anyfl _ |  10 |   1536 (  868) (  668) | 0x3fff12c0 | 0x3fff1790
+	    | SUM                  |            |     |  30944 ( 9108) (21836)
 > dtlss fc::01 1000
 Sending 1000 bytes
 > ps

@@ -21,7 +21,7 @@ def power_server(server: Server):
                 try:
                     server.send(m)
                     response = server.receive()
-                    assert response == m, f'Received other data ({response.decode(errors='ignore')})'
+                    assert response == m, f'Received other data ({response.decode(errors="ignore")})'
                     if good % 100 == 0:
                         print(f'{good} loop, {(time.monotonic_ns() - start_time) / 10**9:.1f} s')
                     good += 1

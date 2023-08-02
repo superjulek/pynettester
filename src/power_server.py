@@ -7,7 +7,7 @@ import cfg
 from results_utils import save_results, ResList
 
 
-POW_SIZE = 450
+POW_SIZE = 200
 
 def power_server(server: Server):
     results = ResList()

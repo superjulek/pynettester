@@ -9,9 +9,9 @@ FILE_UDP = BASE_DIR / 'results/benchmark_server_UDPServer_enp0s31f6_2023_05_14_1
 FILE_ESP = BASE_DIR / 'results/benchmark_server_UDPServer_enp0s31f6_2023_05_13_17_46.csv'
 FILE_DTLS = BASE_DIR / 'results/benchmark_server_DTLSServer_enp0s31f6_2023_05_14_12_59.csv'
 
-FILE_UDP = BASE_DIR / 'results/benchmark_server_UDPServer_wlp4s0_2023_05_20_23_23.csv'
-FILE_ESP = BASE_DIR / 'results/benchmark_server_UDPServer_wlp4s0_2023_05_20_22_10.csv'
-FILE_DTLS = BASE_DIR / 'results/benchmark_server_DTLSServerWolfSSL_wlp4s0_2023_05_21_00_27.csv'
+# FILE_UDP = BASE_DIR / 'results/benchmark_server_UDPServer_wlp4s0_2023_05_20_23_23.csv'
+# FILE_ESP = BASE_DIR / 'results/benchmark_server_UDPServer_wlp4s0_2023_05_20_22_10.csv'
+# FILE_DTLS = BASE_DIR / 'results/benchmark_server_DTLSServerWolfSSL_wlp4s0_2023_05_21_00_27.csv'
 
 
 def get_buckets(x: list, y: list, n: int):
@@ -50,9 +50,9 @@ def draw_processing_multi_graph(datas: dict, fig_name):
         #plt.plot(x, y, 'o')
         plt.errorbar((np.arange(n)+0.5)*bucket_width, bucket_averages, yerr=bucket_stddevs, fmt='.', label=name)
     plt.xlim([0, 1400])
-    plt.ylim(0, 500)
+    plt.ylim(0, 20)
     plt.xlabel('Payload size (bytes)')
-    plt.ylabel('Throughput (kbit/s)')
+    plt.ylabel('Throughput (Mbit/s)')
     plt.grid()
     plt.legend()
     plt.savefig(BASE_DIR / f'graphs/{fig_name}', dpi=1000)
@@ -64,7 +64,7 @@ def read_file_data(filename: str):
     with open(filename, 'r') as csv_file:
         reader = csv.reader(csv_file)
         for idx, row in enumerate(reader):
-            data.append([float(row[0]), 2 * float(row[0]) / float(row[1]) / 1000.])
+            data.append([float(row[0]), 2 * 8 * float(row[0]) / float(row[1]) / 2**20])
     return data
 
 
@@ -74,4 +74,4 @@ if __name__ == '__main__':
         'UDP': read_file_data(FILE_UDP),
         'ESP': read_file_data(FILE_ESP),
     }
-    draw_processing_multi_graph(datas, 'speed_esp.png')
+    draw_processing_multi_graph(datas, 'speed_stm.png')
